@@ -19,7 +19,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: artifact
-          path: raman
+          path: src
 
   build:
     runs-on: ubuntu-latest
