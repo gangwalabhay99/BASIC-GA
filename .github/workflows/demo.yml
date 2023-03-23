@@ -19,11 +19,14 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: artifact
-          path: dist
+          path: public
 
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifact
       - name: Get code
         uses: actions/checkout@v3
       - name: Install dependencies
