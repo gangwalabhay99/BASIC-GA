@@ -7,7 +7,7 @@ env:
   runner: ubuntu-latest
 jobs:
   test:
-    runs-on: ${{env.runner}}
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -16,7 +16,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: abhay-${{hashFiles('**/package-lock.json')}}
+          key: ${{env.runner}}-${{hashFiles('**/package-lock.json')}}
 
       - name: Install dependencies
         run: npm ci
