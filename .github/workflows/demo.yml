@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - main
+env:
+  runner: ubuntu-latest
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{secrets.runnner}}
     steps:
       - name: Get code
         uses: actions/checkout@v3
