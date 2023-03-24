@@ -7,7 +7,7 @@ env:
   runner: ubuntu-latest
 jobs:
   test:
-    runs-on: ${{secrets.runnner}}
+    runs-on: ${{env.runnner}}
     steps:
       - name: Get code
         uses: actions/checkout@v3
