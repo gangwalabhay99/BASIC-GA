@@ -4,7 +4,7 @@ on:
     branches:
       - main
 env:
-  runner: ubuntu-latest
+  name: abhay
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.npm
-          key: ${{env.runner}}-${{hashFiles('**/package-lock.json')}}
+          key: ${{env.name}}-${{hashFiles('**/package-lock.json')}}
 
       - name: Install dependencies
         run: npm ci
